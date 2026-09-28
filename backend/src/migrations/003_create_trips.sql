@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS trips (id SERIAL PRIMARY KEY,passenger_id INTEGER NOT NULL,driver_id INTEGER,taxi_id INTEGER,current_latitude DECIMAL(10,7),current_longitude DECIMAL(10,7),sharing_enabled BOOLEAN DEFAULT FALSE,share_token VARCHAR(255) UNIQUE,status VARCHAR(20) DEFAULT 'ACTIVE');

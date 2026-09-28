@@ -1,0 +1,297 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --color-primary: #F5C518;
+    --color-secondary: #FFAA00;
+    --color-accent: #FFD700;
+    --color-danger: #FF6B6B;
+    --color-bg: #0A0A0F;
+    --color-surface: #111118;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: #F1F5F9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(15, 15, 22, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-card:hover {
+  border-color: rgba(245, 197, 24, 0.25);
+}
+
+.glass-card-interactive {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px 0 rgba(245, 197, 24, 0.12);
+  border-color: rgba(245, 197, 24, 0.35);
+}
+
+.glass-panel {
+  background: rgba(10, 10, 18, 0.88);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #F8FAFC;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #F5C518;
+  box-shadow: 0 0 15px rgba(245, 197, 24, 0.20);
+  outline: none;
+}
+
+/* ═══════════════════════════════════════
+   TAXI YELLOW GRADIENT SYSTEM
+═══════════════════════════════════════ */
+
+.gradient-text-primary {
+  background: linear-gradient(135deg, #F5C518 0%, #FFAA00 60%, #FF8C00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-emergency {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg-primary {
+  background: linear-gradient(135deg, #F5C518 0%, #E6A800 100%);
+}
+
+.gradient-bg-cyan {
+  background: linear-gradient(135deg, #FFAA00 0%, #F5C518 100%);
+}
+
+.gradient-bg-danger {
+  background: linear-gradient(135deg, #FF6B6B 0%, #E63946 100%);
+}
+
+/* Glowing Effects */
+.glow-primary {
+  box-shadow: 0 0 22px rgba(245, 197, 24, 0.40);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 22px rgba(255, 170, 0, 0.38);
+}
+
+.glow-danger {
+  box-shadow: 0 0 26px rgba(255, 107, 107, 0.5);
+}
+
+/* Taxi yellow glow */
+.glow-taxi {
+  box-shadow: 0 0 30px rgba(245, 197, 24, 0.5), 0 0 60px rgba(245, 197, 24, 0.15);
+}
+
+/* Emergency Mode Visual Aura */
+.emergency-active {
+  box-shadow: inset 0 0 40px rgba(255, 107, 107, 0.25), 0 0 30px rgba(255, 107, 107, 0.3);
+  animation: emergencyPulse 2s infinite ease-in-out;
+}
+
+@keyframes emergencyPulse {
+  0%, 100% {
+    border-color: rgba(255, 107, 107, 0.8);
+    box-shadow: inset 0 0 60px rgba(255, 107, 107, 0.3), 0 0 30px rgba(255, 107, 107, 0.4);
+  }
+  50% {
+    border-color: rgba(255, 50, 50, 0.4);
+    box-shadow: inset 0 0 20px rgba(255, 107, 107, 0.1), 0 0 10px rgba(255, 107, 107, 0.2);
+  }
+}
+
+/* Taxi Checkerboard stripe */
+.taxi-stripe {
+  background: repeating-linear-gradient(
+    90deg,
+    #1a1a1a 0px,
+    #1a1a1a 10px,
+    #F5C518 10px,
+    #F5C518 20px
+  );
+  height: 4px;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Taxi bounce animation */
+@keyframes taxiBounce {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+.animate-taxi {
+  animation: taxiBounce 3s ease-in-out infinite;
+}
+
+/* Trip step pulse */
+@keyframes stepGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(245, 197, 24, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(245, 197, 24, 0.7), 0 0 40px rgba(245, 197, 24, 0.2); }
+}
+.animate-step-glow {
+  animation: stepGlow 2s ease-in-out infinite;
+}
+
+/* QR code scan beam animation */
+@keyframes scanBeam {
+  0% { top: 5%; opacity: 0.9; }
+  50% { top: 90%; opacity: 0.6; }
+  100% { top: 5%; opacity: 0.9; }
+}
+.animate-scan-beam {
+  animation: scanBeam 2s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 197, 24, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 197, 24, 0.55);
+}
+
+/* Map tiles styling for dark and satellite themes */
+.leaflet-container {
+  background-color: #05050D !important;
+  font-family: inherit;
+}
+
+/* Specific filter for standard OSM tiles if used in dark mode */
+.leaflet-tile-tactical-dark {
+  filter: brightness(0.7) contrast(1.2) hue-rotate(185deg);
+}
+
+/* God's Eye Radar & Tactical HUD Animations */
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 4s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes godEyePulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.85;
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    opacity: 0.35;
+    box-shadow: 0 0 0 20px rgba(0, 212, 255, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.85;
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+  }
+}
+
+.animate-god-eye-pulse {
+  animation: godEyePulse 2.5s infinite;
+}
+
+@keyframes targetReticle {
+  0% {
+    transform: rotate(0deg) scale(1.2);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+.animate-target-reticle {
+  animation: targetReticle 6s linear infinite;
+}
+
+@keyframes pingSlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-ping-slow {
+  animation: pingSlow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* High-tech tactical grid overlay */
+.tactical-grid-overlay {
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+

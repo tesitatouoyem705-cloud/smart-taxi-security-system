@@ -1,0 +1,1 @@
+function distanceKm(a,b,c,d){const R=6371,toR=x=>x*Math.PI/180,dl=toR(c-a),dn=toR(d-b),x=Math.sin(dl/2)**2+Math.cos(toR(a))*Math.cos(toR(c))*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(x));}module.exports={distanceKm};

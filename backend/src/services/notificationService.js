@@ -1,0 +1,1 @@
+async function createNotification(data){return {...data,status:"PENDING"};} module.exports={createNotification};

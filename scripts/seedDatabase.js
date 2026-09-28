@@ -1,0 +1,1 @@
+require('dotenv').config();const{sequelize}=require('../backend/src/config/database');(async()=>{await sequelize.sync();console.log('Database synchronized');await sequelize.close()})().catch(console.error);

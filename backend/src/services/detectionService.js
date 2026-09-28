@@ -1,0 +1,1 @@
+function classifyIncident(input){return input?.type||"OTHER";} module.exports={classifyIncident};

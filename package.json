@@ -1,0 +1,17 @@
+{
+  "name": "smart-taxi-security-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "backend": "node backend/src/server.js",
+    "backend:dev": "node backend/node_modules/nodemon/bin/nodemon.js backend/src/server.js",
+    "frontend": "node frontend/node_modules/vite/bin/vite.js frontend",
+    "mobile": "npm.cmd --prefix mobile run dev",
+    "mobile:build": "npm.cmd --prefix mobile run build",
+    "start": "start cmd /k \"npm.cmd run backend\" && start cmd /k \"npm.cmd run mobile\"",
+    "start:all": "start cmd /k \"npm.cmd run backend\" && start cmd /k \"npm.cmd run frontend\" && start cmd /k \"npm.cmd run mobile\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}

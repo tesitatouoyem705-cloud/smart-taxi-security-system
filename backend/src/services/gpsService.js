@@ -1,0 +1,1 @@
+function validateCoordinates(lat,lng){lat=Number(lat);lng=Number(lng);return Number.isFinite(lat)&&Number.isFinite(lng)&&lat>=-90&&lat<=90&&lng>=-180&&lng<=180;} module.exports={validateCoordinates};

@@ -1,0 +1,1 @@
+const r=require("express").Router(),{authenticate}=require("../middleware/auth"),{allowRoles}=require("../middleware/roleCheck"),c=require("../controllers/qrController");r.post("/scan",authenticate,allowRoles("PASSENGER"),c.scanQR);module.exports=r;

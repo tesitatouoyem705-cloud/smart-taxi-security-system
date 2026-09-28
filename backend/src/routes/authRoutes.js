@@ -1,0 +1,1 @@
+const r=require("express").Router(),c=require("../controllers/authController"),{requireFields}=require("../middleware/validation");r.post("/register",requireFields("name","email","password"),c.register);r.post("/login",requireFields("email","password"),c.login);module.exports=r;

@@ -1,0 +1,1 @@
+import{useEffect,useState}from'react';export default function useLocation(){const[l,setL]=useState(null);useEffect(()=>{if(!navigator.geolocation)return;const id=navigator.geolocation.watchPosition(p=>setL({latitude:p.coords.latitude,longitude:p.coords.longitude}));return()=>navigator.geolocation.clearWatch(id)},[]);return l}
